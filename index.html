@@ -1,0 +1,32 @@
+<html>
+<head>
+  <script>
+    function closeMe()
+    {
+      var win=window.open("","_self");
+      win.close();
+    }
+    setTimeout(function(){ closeMe(); }, 500);
+  </script>
+</head>
+<body>
+  <script>
+    function prepareFrame(value1, value2, value3) {
+        var ifrm = document.createElement("iframe");
+        ifrm.setAttribute("src", "https://maker.ifttt.com/trigger/tensao/with/key/es8v3DKO0PPqZ8Hx-uyfa?value1="+value1+"&value2="+value2+"&value3="+value3);
+        ifrm.style.width = "1px";
+        ifrm.style.height = "1px";
+        document.body.appendChild(ifrm);
+    }
+    function getUrlParams(){
+      var url_string = window.location.href
+      var url = new URL(url_string);
+      var value1 = url.searchParams.get("value1");
+      var value2 = url.searchParams.get("value2");
+      var value3 = url.searchParams.get("value3");
+      prepareFrame(value1, value2, value3)
+    }
+    getUrlParams();
+  </script>
+</body>
+</html>
