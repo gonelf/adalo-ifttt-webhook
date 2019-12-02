@@ -6,7 +6,7 @@
       var win=window.open("","_self");
       win.close();
     }
-    setTimeout(function(){ closeMe(); }, 500);
+
   </script>
 </head>
 <body>
@@ -17,6 +17,7 @@
         ifrm.style.width = "1px";
         ifrm.style.height = "1px";
         document.body.appendChild(ifrm);
+        setTimeout(function(){ closeMe(); }, 500);
     }
     function getUrlParams(){
       var url_string = window.location.href
